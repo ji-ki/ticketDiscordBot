@@ -4,21 +4,12 @@ import config
 import models
 from database import engine, SessionLocal, Base
 
-intents = discord.Intents.default()
-intents.message_content = True
-
-bot = commands.Bot(command_prefix='!', intents=intents)
-
-#@bot.event
-#async def on_ready():
-#    print(f'Logged in as {bot.user.name}')
-
-
 # Создание таблиц в базе данных
 Base.metadata.create_all(bind=engine)
 
 intents = discord.Intents.default()
 intents.message_content = True
+#чекнуть intents all
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
